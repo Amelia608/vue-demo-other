@@ -1,6 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 Vue.use(VueRouter);
+import Layout from '@/views/layout'
 const routes = [
     {
       path:'/404',
@@ -9,6 +10,18 @@ const routes = [
     {
         path: "/",
         component: () => import("@/views/layout"),
+    },
+    {
+      path: '/',
+      component: Layout,
+      redirect: '/dashboard',
+      meta: { onlyShowParent: true },
+      children: [{
+        path: 'dashboard',
+        name: 'Dashboard',
+        component: () => import('@/views/dashboard'),
+        meta: { title: '首页'}
+      }]
     },
     {
       path:'*',
