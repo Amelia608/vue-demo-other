@@ -24,6 +24,6 @@
     align-items: center;
     height: 60px;
     padding:0 20px;
-    border-bottom: 1px solid $border;
+    border-bottom: 1px solid #f4f4f4;
   }
 </style>

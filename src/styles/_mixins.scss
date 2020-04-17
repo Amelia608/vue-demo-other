@@ -76,6 +76,11 @@
       }
 
       @each $dir-abbrev, $dir in $direction {
+        // 消除带方向的间距，.pr0, .mr0...
+        .#{$abbrev}#{$dir-abbrev}0 {
+          #{$prop}: 0px !important;
+        }
+
         // 带方向的间距，如 .pt1, .pr1, .pt2 ...; .mt1, .mr1, .mt2 ...
         .#{$abbrev}#{$dir-abbrev}#{$size} {
           #{$prop}-#{$dir}: $size + px !important;
@@ -98,12 +103,4 @@
   height: $height;
   background-size: cover;
   background: no-repeat center center;
-}
-
-@mixin font-size($size){
-  @each $var in $size {
-    .f#{$var}{
-      font-size: $var+px !important;
-    }
-  }
 }

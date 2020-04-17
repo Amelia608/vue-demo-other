@@ -10,7 +10,7 @@
             active-text-color="#ffd04b"
             router
         >
-             <el-menu-item v-for="route in routes" :key="route.path" :index="route.path">imd{{route.path}}</el-menu-item>
+             <el-menu-item v-for="route in routes" :key="route.path" :index="route.path">{{route.title}}</el-menu-item>
         </el-menu>
     </div>
 </template>
