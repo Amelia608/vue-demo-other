@@ -21,7 +21,7 @@ const routes = [
                 path: "dashboard",
                 name: "Dashboard",
                 component: () => import("@/views/dashboard"),
-                meta: { title: "首页" },
+                meta: { title: 'Dashboard', icon: 'dashboard', affix: true }
             },
         ],
     },
@@ -35,13 +35,14 @@ const routes = [
                 path: "/element-ui",
                 name: "elementUI",
                 component: () => import("@/views/element-ui"),
-                meta: { title: "elementUI" },
+                meta: { title: "elementUI" , icon: 'dashboard', affix: true }
             },
         ],
     },
     {
         path: "*",
         redirect: "/404",
+        hidden: true 
     },
 ];
 export default new VueRouter({

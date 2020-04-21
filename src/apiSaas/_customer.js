@@ -113,7 +113,7 @@ export default {
     if (data.id) {
       return axios.post('emp/customerLabel/updateLabel', data)
     }
-    let { id, ...params } = data
+    let {...params } = data
     return axios.post('emp/customerLabel/saveLabel', params)
   },
   // 删除用户会员标签--接口

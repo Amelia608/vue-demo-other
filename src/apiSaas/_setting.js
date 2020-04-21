@@ -126,5 +126,5 @@ export default {
   // 消息删除
   delMsgList: (data) => axios.post(`/mall/msg/deleteMsg`, data),
   // 消息总数
-  getMsgNum: (data) => axios.get(`/mall/msg/msgCount`)
+  getMsgNum: () => axios.get(`/mall/msg/msgCount`)
 }
