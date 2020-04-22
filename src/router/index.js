@@ -6,22 +6,18 @@ const routes = [
     {
         path: "/404",
         component: () => import("@/views/404"),
-    },
-    {
-        path: "/",
-        component: () => import("@/views/layout"),
+        hidden: true,
     },
     {
         path: "/",
         component: Layout,
         redirect: "/dashboard",
-        meta: { onlyShowParent: true },
         children: [
             {
                 path: "dashboard",
-                name: "Dashboard",
                 component: () => import("@/views/dashboard"),
-                meta: { title: 'Dashboard', icon: 'dashboard', affix: true }
+                name: "Dashboard",
+                meta: { title: "Dashboard", icon: "s-home"},
             },
         ],
     },
@@ -29,24 +25,23 @@ const routes = [
         path: "/element-ui",
         component: Layout,
         redirect: "/element-ui",
-        meta: { onlyShowParent: true },
         children: [
             {
-                path: "/element-ui",
+                path: "",
                 name: "elementUI",
                 component: () => import("@/views/element-ui"),
-                meta: { title: "elementUI" , icon: 'dashboard', affix: true }
-            },
+                meta: { title: "ElementUI", icon: "platform-eleme"},
+            }
         ],
     },
     {
         path: "*",
         redirect: "/404",
-        hidden: true 
+        hidden: true,
     },
 ];
 export default new VueRouter({
     mode: "history",
-    scrollBehavior: "0",
+    scrollBehavior: ()=>({y:0}),
     routes,
 });

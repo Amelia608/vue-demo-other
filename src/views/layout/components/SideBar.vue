@@ -10,18 +10,21 @@
             active-text-color="#ffd04b"
             router
         >
-             <el-menu-item v-for="route in routes" :key="route.path" :index="route.path">{{route.title}}</el-menu-item>
+          <!-- <el-menu-item v-for="route in routes" :key="route.path" :index="route.path">{{route.title}}</el-menu-item> -->
+          <sidebar-item  v-for="route in routes" :key="route.path" :index="route.path" :item="route" :base-path="route.path"/>
         </el-menu>
     </div>
 </template>
 <script>
+import SidebarItem from './SidebarItem'
 export default {
+  components:{SidebarItem},
     data() {
         return {};
     },
     computed:{
       routes(){
-        const routes=[...this.$router.options.routes].filter(el=>el.meta)
+        const routes=[...this.$router.options.routes]
         
         return routes
       }

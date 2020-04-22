@@ -1,3 +1,6 @@
+export function isExternal(path) {
+  return /^(https?:|mailto:|tel:)/.test(path)
+}
 // 非0合法金额
 export const validateMoney = (val) => /(^[1-9]\d*(\.\d{1,2})?$)|(^0\.\d{1,2}$)/.test(val)
 

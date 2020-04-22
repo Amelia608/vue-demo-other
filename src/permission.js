@@ -3,7 +3,7 @@ import router from "./router";
 // import { Message } from "element-ui";
 import NProgress from "nprogress";
 import getPageTitle from "@/utils/get-page-title";
-NProgress.configure({ showSpinner: false });
+NProgress.configure({ showSpinner: true });
 // const whiteList = ["/login"];
 router.beforeEach((to, from, next) => {
     NProgress.start();
