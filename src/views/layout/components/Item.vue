@@ -12,14 +12,13 @@ export default {
       default: ''
     }
   },
-  render(h, context) {
-    console.log(context)
-    const {  icon,title } = context.props
+  render (h, context) {
+    const { icon, title } = context.props
     const vnodes = []
 
     if (icon) {
-      let reicon='el-icon-'+icon
-      vnodes.push(<i class={reicon}/>)
+      let reicon = 'el-icon-' + icon
+      vnodes.push(<i class={reicon} />)
     }
 
     if (title) {
