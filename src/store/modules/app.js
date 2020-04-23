@@ -48,7 +48,7 @@ const app = {
     ADD_KEEP_ALIVE_INCLUDE: (state, name) => {
       !state.keepAliveInclude.includes(name) && state.keepAliveInclude.push(name)
     },
-    DEL_KEEP_ALIVE_INCLUDE: (state, name) => {
+    DEL_KEEP_ALIVE_INCLUDE: (state) => {
       state.keepAliveInclude = []
       // const index = state.keepAliveInclude.indexOf(name)
       // index > -1 && state.keepAliveInclude.splice(index, 1)

@@ -1,7 +1,8 @@
 <template>
-  <div class="component-nav">
-    <h1>后台管理系统</h1>
-    <div>
+  <div class="component-nav" :style="{fontSize:'24px',borderColor:theme}">
+    <h1 class="nav-title">后台管理系统</h1>
+    <div class="right">
+      <ThemePicker @change="themeChange"/>
       <el-dropdown szie="mini">
         <el-button type="default"
           szie="mini">
@@ -16,6 +17,26 @@
     </div>
   </div>
 </template>
+<script>
+import ThemePicker from '@/components/ThemePicker'
+export default {
+  name: 'NavBar',
+  components: { ThemePicker },
+  computed:{
+    theme(){
+      return this.$store.state.settings.theme
+    }
+  },
+  methods: {
+    themeChange (val) {
+      this.$store.dispatch('settings/changeSetting', {
+        key: 'theme',
+        value: val
+      })
+    }
+  }
+}
+</script>
 <style lang="scss" scoped>
 .component-nav {
   display: flex;
@@ -25,5 +46,9 @@
   height: 60px;
   padding: 0 20px;
   border-bottom: 1px solid #f4f4f4;
+}
+.right{
+  display: flex;
+  align-items: center;
 }
 </style>

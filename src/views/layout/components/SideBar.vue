@@ -1,52 +1,54 @@
 <template>
-    <div class="nav-bar-wrapper">
-        <el-menu
-            :default-active="$route.path"
-            class="el-menu-vertical-demo"
-            @open="handleOpen"
-            @close="handleClose"
-            background-color="#545c64"
-            text-color="#fff"
-            active-text-color="#ffd04b"
-            router
-        >
-          <!-- <el-menu-item v-for="route in routes" :key="route.path" :index="route.path">{{route.title}}</el-menu-item> -->
-          <sidebar-item  v-for="route in routes" :key="route.path" :index="route.path" :item="route" :base-path="route.path"/>
-        </el-menu>
-    </div>
+  <div class="nav-bar-wrapper" :style="{background:theme}">
+    <el-menu :default-active="$route.path"
+      class="el-menu-vertical-demo"
+      @open="handleOpen"
+      @close="handleClose"
+      :background-color="theme"
+      text-color="#fff"
+      active-text-color="#ffd04b"
+      router>
+      <!-- <el-menu-item v-for="route in routes" :key="route.path" :index="route.path">{{route.title}}</el-menu-item> -->
+      <sidebar-item v-for="route in routes"
+        :key="route.path"
+        :index="route.path"
+        :item="route"
+        :base-path="route.path" />
+    </el-menu>
+  </div>
 </template>
 <script>
 import SidebarItem from './SidebarItem'
 export default {
-  components:{SidebarItem},
-    data() {
-        return {};
+  components: { SidebarItem },
+  data () {
+    return {};
+  },
+  computed: {
+    routes () {
+      const routes = [...this.$router.options.routes]
+      return routes
     },
-    computed:{
-      routes(){
-        const routes=[...this.$router.options.routes]
-        
-        return routes
-      }
-    },
-    methods: {
-        handleOpen(key, keyPath) {
-            console.log(key, keyPath);
-        },
-        handleClose(key, keyPath) {
-            console.log(key, keyPath);
-        }
+    theme(){
+      return this.$store.state.settings.theme
     }
+  },
+  methods: {
+    handleOpen (key, keyPath) {
+      console.log(key, keyPath);
+    },
+    handleClose (key, keyPath) {
+      console.log(key, keyPath);
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>
 .nav-bar-wrapper {
-    width: 260px;
-    position: fixed;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    overflow: scroll;
-    background: #545c64;
+  width: 260px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
 }
 </style>
