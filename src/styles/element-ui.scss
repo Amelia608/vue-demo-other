@@ -1,6 +1,6 @@
 /* 重置 element-ui 默认样式 */
 // @import "./variables-element";
-@import "./element-variables";
+@import "./_variables-element.scss";
 @import "~element-ui/packages/theme-chalk/src/index";
 .el-menu{
   border-right: none !important;
