@@ -1,11 +1,3 @@
-/*
- * @Descripttion: 
- * @version: 
- * @Author: chenying
- * @Date: 2020-04-16 14:08:12
- * @LastEditors: chenying
- * @LastEditTime: 2020-04-28 10:50:27
- */
 import Vue from 'vue'
 import ElementUI from 'element-ui'
 import countTo from 'vue-count-to'
