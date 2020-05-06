@@ -38,7 +38,7 @@ var option = {
 
 	series: [
 		{
-			name: "Top 5",
+			name: "Top",
 			type: "effectScatter",
 			coordinateSystem: "geo",
 			symbolSize: function (val) {
@@ -59,6 +59,22 @@ var option = {
 			zlevel: 1,
 		},
 	],
+	visualMap: [{
+		// 区域显示颜色
+		type: 'piecewise',
+		show: true,
+		pieces: [
+      { min: 101, max: 1000 },
+      {value: 99, label: '123（自定义特殊颜色）', color: 'grey'},
+			{ max: 100 }
+    ],
+		inRange: {
+			// 区域图标样式
+			symbol: 'circle',
+			symbolSize: [5, 10],
+			color: ['#f75749', 'red'],
+		},
+	}],
 };
 
 
@@ -73,8 +89,7 @@ export default {
 	},
 	mounted () {
 		mapData.map(info => {
-      var city = info.children;
-      console.log(city)
+			var city = info.children;
 			for (var i = 0; i < city.length; i++) {
 				var citydetail = [];
 				var name = city[i].name;
@@ -105,6 +120,7 @@ export default {
 					});
 				}
 			}
+			console.log(res)
 			return res;
 		}
 	}
