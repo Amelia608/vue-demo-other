@@ -1,3 +1,11 @@
+/*
+ * @Descripttion: 
+ * @version: 
+ * @Author: chenying
+ * @Date: 2020-04-16 14:08:12
+ * @LastEditors: chenying
+ * @LastEditTime: 2020-05-06 15:46:16
+ */
 import Vue from "vue";
 import VueRouter from "vue-router";
 Vue.use(VueRouter);
@@ -46,6 +54,19 @@ const routes = [
         meta: { title: "Mock数据", icon: "s-tools" },
       },
     ],
+  },
+  {
+    path:"/echarts",
+    component:Layout,
+    redirect:"/echarts",
+    children:[
+      {
+        path:"index",
+        name:"Echarts",
+        component:()=>import("@/views/echarts"),
+        meta:{title:"Echarts图表",icon:"s-marketing"}
+      }
+    ]
   },
   {
     path: "*",
