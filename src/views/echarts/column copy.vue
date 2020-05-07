@@ -29,12 +29,11 @@ export default {
 				data: ['百度', '谷歌', '必应', '其他']
 			},
 			grid: {
-				left: '3%',
-				right: '4%',
+				left: '30%',
+				right: '40%',
 				bottom: '3%',
 				containLabel: true
-      },
-      color: ['#13C2C2','#304156', '#6959CD','#1890FF'],
+			},
 			xAxis: [
 				{
 					type: 'category',
@@ -48,7 +47,7 @@ export default {
 				{
 					name: '百度',
 					type: 'bar',
-					barWidth: 60,
+					barWidth: 20,
 					stack: '搜索引擎',
 					data: [602, 732, 701, 734, 1090, 1130, 1120]
 				},
