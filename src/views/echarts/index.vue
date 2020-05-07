@@ -63,14 +63,20 @@ var option = {
 		// 区域显示颜色
 		type: 'piecewise',
 		show: true,
+		textGap: 10,//两端文字主体之间的距离，单位为px
+		showLabel: false, //是否显示每项的文本标签
 		pieces: [
-      { min: 101, max: 1000 },
-      {value: 99, label: '123（自定义特殊颜色）', color: 'grey'},
+			{ min: 101, max: 1000 },
+			{ value: 99, label: '123（自定义特殊颜色）', color: 'grey' },
 			{ max: 100 }
-    ],
+		],
+		itemSymbol: "roundRect",
+		hoverLink: true,//鼠标悬浮到 visualMap 组件上时，鼠标位置对应的数值 在 图表中对应的图形元素，会高亮
+		borderColor: "#ccc",                         //边框颜色
+		borderWidth: 1,                               //边框线宽
 		inRange: {
 			// 区域图标样式
-			symbol: 'circle',
+			// symbol: 'circle',
 			symbolSize: [5, 10],
 			color: ['#f75749', 'red'],
 		},
@@ -120,7 +126,6 @@ export default {
 					});
 				}
 			}
-			console.log(res)
 			return res;
 		}
 	}
@@ -129,7 +134,6 @@ export default {
 
 
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .hello {
 	background: #000033;
