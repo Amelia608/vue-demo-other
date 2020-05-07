@@ -14,7 +14,9 @@ import 'echarts/map/js/china.js'
 export default {
 	name: 'HelloWorld',
 	mounted () {
-		this.myChart = echarts.init(document.getElementById('echarts'))
+    this.myChart = echarts.init(document.getElementById('echarts'))
+    this.myChart.showLoading();
+    this.myChart.hideLoading()
 		this.myChart.setOption({
 			title: {
 				text: 'ECharts 入门示例'
