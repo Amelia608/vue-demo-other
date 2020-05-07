@@ -59,12 +59,23 @@ const routes = [
     path:"/echarts",
     component:Layout,
     redirect:"/echarts",
+    name: 'echarts',
+    meta: {
+      title: 'Echarts',
+      icon: 's-marketing'
+    },
     children:[
       {
         path:"index",
-        name:"Echarts",
+        name:"Echarts-index",
         component:()=>import("@/views/echarts"),
         meta:{title:"Echarts图表",icon:"s-marketing"}
+      },
+      {
+        path:"column",
+        name:"Echarts-Column",
+        component:()=>import("@/views/echarts/column"),
+        meta:{title:"柱状图",icon:"s-marketing"}
       }
     ]
   },

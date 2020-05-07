@@ -9,6 +9,8 @@ import router from "./router";
 import "./permission";
 import variables from "@/styles/_variables-element.scss";
 import store from "@/store";
+import SidebarItem from "@/views/layout/components/SidebarItem"
+Vue.component('SidebarItem', SidebarItem)
 // console.log(Vue.config.productionTip,process.env.NODE_ENV)
 const version = require("element-ui/package.json").version;
 console.log(variables, version);
