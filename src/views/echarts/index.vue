@@ -60,8 +60,10 @@ var option = {
 	series: [
 		{
 			name: "Top",
-			type: "effectScatter",
-			coordinateSystem: "geo",
+			// type: "effectScatter",
+			type: "scatter",
+      coordinateSystem: "geo",
+      roam:true,
 			symbolSize: function (val) {
 				return val[2] / 10;
 			},

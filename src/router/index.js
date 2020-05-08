@@ -76,6 +76,18 @@ const routes = [
         name:"Echarts-Column",
         component:()=>import("@/views/echarts/column"),
         meta:{title:"柱状图",icon:"s-marketing"}
+      },
+      {
+        path:"circle",
+        name:"Echarts-Circle",
+        component:()=>import("@/views/echarts/circle"),
+        meta:{title:"环形图",icon:"s-marketing"}
+      },
+      {
+        path:"line",
+        name:"Echarts-Line",
+        component:()=>import("@/views/echarts/line"),
+        meta:{title:"折线图",icon:"s-marketing"}
       }
     ]
   },
