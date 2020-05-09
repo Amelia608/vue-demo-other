@@ -92,6 +92,33 @@ const routes = [
     ]
   },
   {
+    path:"/nested",
+    comments:Layout,
+    redirect:"/nested",
+    children:[
+      {
+        path:'',
+        name:'router-nested',
+        component:()=>import("@/views/router-nested"),
+        meta:{title:"路由嵌套",icon: "s-tools"},
+        children:[
+          {
+            path:'profile',
+            name:'nested1',
+            component:()=>import("@/views/router-nested/profile"),
+            meta:{title:"路由嵌套",icon: "s-tools"},
+          },
+          {
+            path:'posts',
+            name:'nested2',
+            component:()=>import("@/views/router-nested/posts"),
+            meta:{title:"路由嵌套",icon: "s-tools"},
+          }
+        ]
+      }
+    ]
+  },
+  {
     path: "*",
     redirect: "/404",
     hidden: true,

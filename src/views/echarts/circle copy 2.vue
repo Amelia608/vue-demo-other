@@ -17,6 +17,34 @@ export default {
 		this.myChart = echarts.init(document.getElementById('echarts'))
 		this.myChart.showLoading();
 		this.myChart.hideLoading()
+		// let bgColor = '#fff';
+		// let title = '总量';
+		// let color = ['#0E7CE2', '#FF8352', '#E271DE', '#F8456B', '#00FFFF', '#4AEAB0'];
+		// let echartData = [{
+		// 	name: "A类",
+		// 	value: "3720"
+		// },
+		// {
+		// 	name: "B类",
+		// 	value: "2920"
+		// },
+		// {
+		// 	name: "C类",
+		// 	value: "2200"
+		// },
+		// {
+		// 	name: "D类",
+		// 	value: "1420"
+		// }
+		// ];
+
+		// let formatNumber = function (num) {
+		// 	let reg = /(?=(\B)(\d{3})+$)/g;
+		// 	return num.toString().replace(reg, ',');
+		// }
+		// let total = echartData.reduce((a, b) => {
+		// 	return a + b.value * 1
+    // }, 0);
     var data = this.genData(50);
 		const option = {
 			title: {
@@ -35,6 +63,7 @@ export default {
 				top: 20,
 				bottom: 20,
 				data: data.legendData,
+
 				selected: data.selected
 			},
 			series: [
