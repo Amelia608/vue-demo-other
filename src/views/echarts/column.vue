@@ -97,6 +97,7 @@ export default {
         series: data
       }
       let myChart = echarts.init(this.$refs.echarts)
+      // myChart.clear()
       myChart.setOption(options,true);
 
     },
