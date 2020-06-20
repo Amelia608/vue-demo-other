@@ -1,9 +1,18 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: june chen
+ * @Date: 2020-05-07 22:11:03
+ * @LastEditors: june chen
+ * @LastEditTime: 2020-06-20 10:53:20
+--> 
 <template>
   <div>
     <el-button type="primary"
       @click="sendData">传递数据</el-button>
     <hr>
     <h1 class="f20 mb20">mock数据查询</h1>
+   
     <el-form :inline="true"
       :model="formInline"
       class="demo-form-inline">
