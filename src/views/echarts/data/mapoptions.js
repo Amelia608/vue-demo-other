@@ -20,6 +20,7 @@ function addImage(params, api, realData) {
     return {
         type: "text",
         position: [15, -5],
+        z2:10,
         style: {
             text: "+" + realData[params.dataIndex].num,
             x: api.coord([
@@ -37,9 +38,9 @@ function addImage(params, api, realData) {
 }
 function addImage1(params, api, realData) {
     return {
-        // type: "image",
-        type:'circle',
+        type: "image",
         position: [15, -5],
+        z2:5,
         style: {
             image: 'http://img4.imgtn.bdimg.com/it/u=3985879154,1811761728&fm=26&gp=0.jpg',
             x: api.coord([
@@ -50,16 +51,9 @@ function addImage1(params, api, realData) {
                 realData[params.dataIndex].lng,
                 realData[params.dataIndex].lat,
             ])[1],
-            // width: 20,
-            // height: 19,
-            fill: "red",
-            stroke: "yellow",
+            width: 20,
+            height: 19,
         },
-        shape:{
-          cx:50,
-          cy:50,
-          r:2
-        }
     };
 }
 var option = {
