@@ -1,3 +1,11 @@
+/*
+ * @Descripttion: 
+ * @version: 
+ * @Author: june chen
+ * @Date: 2020-04-21 23:03:42
+ * @LastEditors: june chen
+ * @LastEditTime: 2020-06-20 17:58:51
+ */ 
 module.exports={
   //基本路径
   publicPath:'/',
@@ -17,5 +25,8 @@ module.exports={
   },
   //放置静态资源
   assetsDir:'static',
-  indexPath:'index.html'
+  indexPath:'index.html',
+  configureWebpack:{
+    devtool:'souce-map'
+  }
 }

@@ -42,43 +42,6 @@ export default {
 			echarts.registerMap('myjson', myjson);
 			this.drawMap()
 		})
-		this.mycharts.on("mouseover", params => {
-			console.log(params)
-			setTimeout(() => {
-				let label = {
-					emphasis: {
-						show: true,
-						color: "#fff",
-						// width: 188,
-						// height: "90px",
-						// backgroundColor: "red",
-						backgroundColor: "rgba(0,0,0,.7)",
-						padding: 10,
-						align: 'left',
-						borderRadius: 4
-					},
-					formatter: function (params) {
-						console.log(params);
-						return "{a|" + params.name + "}" + "   {b|NO.54}\n\n{x|得分：100      当前报警：30个 \n\n已解决:15个     累计待解决:10个}";
-						// return "{a|" + params.name + "}";
-					},
-					rich: {
-						a: { color: "#fff" },
-						b: { color: "#FFAD46", display: "block" },
-						x: {
-							color: "#8F96A6",
-							marginTop: 10
-						},
-					},
-					// formatter: function(params) {
-					//   console.log(params);
-					//   return params.name;
-					// },
-				}
-				option.geo.label = label
-				this.mycharts.setOption(option, true);
-			}, 1000);
-		})
 	},
 	methods: {
 		drawMap () {
