@@ -19,10 +19,17 @@
 		<div class="img-box">
 			<img src="url"	alt="">
 		</div>
+    <div>
+        <ul>
+            <items v-for="(model, index) in list" :model="model" :key="index"></items>
+        </ul>
+    </div>
 	</div>
 </template>
 <script>
+import Items from './components/item'
 export default {
+  components:{Items},
 	data () {
 		return {
 			msg: '未更新',
@@ -30,7 +37,29 @@ export default {
 			endVal: 1000,
 			date: new Date(),
 			formatDate: '',
-			url: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1588149115879&di=3b607c40d7b7798b72dab517828604e8&imgtype=0&src=http%3A%2F%2Fuploads.5068.com%2Fallimg%2F1712%2F151-1G2060U603.jpg'
+      url: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1588149115879&di=3b607c40d7b7798b72dab517828604e8&imgtype=0&src=http%3A%2F%2Fuploads.5068.com%2Fallimg%2F1712%2F151-1G2060U603.jpg',
+      list: [
+              {
+                  "id": "1",
+                  "menuName": "项目管理",
+                  "childTree": [{
+                      "menuName": "项目进度",
+                      "childTree": [{
+                          "menuName": "项目一",
+                          "childTree": [{ "menuName": "详细信息" }]
+                      }]
+                  }, {
+                      "menuName": "任务安排"
+                  }]
+              }, 
+              {
+                  "id": "2",
+                  "menuName": "数据统计"
+              }, 
+              {
+                  "id": "3",
+                  "menuName": "人员管理"
+              }]
 		}
 	},
 	mounted () {

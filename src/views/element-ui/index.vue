@@ -2,7 +2,7 @@
   <div>
     <el-upload
       class="upload-demo"
-      action="https://jsonplaceholder.typicode.com/posts/"
+      action="https://business.mklmall.com/investplat/e/division/import"
       :on-preview="handlePreview"
       :on-remove="handleRemove"
       :before-remove="beforeRemove"
